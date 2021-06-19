@@ -62,6 +62,24 @@ namespace SweetAndSavory.Controllers
       return View(thisTreat);
     }
 
+        public ActionResult Edit(int id)
+    {
+      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorTreat");
+      return View(thisTreat);
+    }
+
+    [HttpPost]
+
+    public ActionResult Edit(Treat treat)
+    {
+      _db.Entry(treat).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = treat.TreatId });
+    }
+
+
+
 
 
 
