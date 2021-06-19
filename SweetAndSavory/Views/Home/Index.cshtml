@@ -1,1 +1,14 @@
-﻿
+﻿@{
+  Layout = "_Layout";
+}
+
+@using SweetAndSavory.Models
+
+<h1 class="title">Pierre's Sweet And Savory Treats</h1>
+
+
+
+<ul class="menu-links">
+  <li>@Html.ActionLink("see all treats we offer", "Index", "Treats")</li>
+  <li>@Html.ActionLink("see all of our famous flavors", "Index", "Flavors")</li>
+</ul>
