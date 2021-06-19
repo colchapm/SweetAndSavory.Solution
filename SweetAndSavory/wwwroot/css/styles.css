@@ -1,0 +1,30 @@
+﻿.menu-links
+{
+  display: flex;
+  list-style-type: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.menu-links li {
+  padding: 0 10px;
+}
+
+.menu-links li:nth-child(1) {
+  padding-left: 0;
+}
+
+.title 
+{
+  text-align: center;
+  font-size: 7;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 13px;
+  margin: 10px;
+  box-sizing: border-box;
+  display: block;
+}
