@@ -6,6 +6,33 @@
 
 <h1 class="title">Pierre's Sweet And Savory Treats</h1>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Treats Currently On The Menu</h3>
+      @if (@ViewBag.TreatMenu.Count == 0)
+      {
+        <h4>we have not created any treats yet</h4>
+      }
+      @foreach (Treat treat in @ViewBag.TreatMenu)
+      {
+        <li>@Html.ActionLink($"{treat.Name}","Details","Treats", new { id = treat.TreatId })</li>
+      }
+    </div>
+    <div class="col-md-6">
+      <h3>Flavors Currently On The Menu</h3>
+      @if (@ViewBag.FlavorMenu.Count == 0)
+      {
+        <h4>we are in a rut and do not have any flavors to offer right now</h4>
+      }
+      @foreach(Flavor flavor in @ViewBag.FlavorMenu)
+      {
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+      }
+    </div>
+  </div>
+</div>
+
 
 
 <ul class="menu-links">

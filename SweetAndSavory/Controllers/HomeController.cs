@@ -18,6 +18,8 @@ namespace SweetAndSavory.Controllers
 
     public ActionResult Index()
     {
+      ViewBag.TreatMenu = new List<Treat>(_db.Treats.OrderBy(treat => treat.Name));
+      ViewBag.FlavorMenu = new List<Flavor>(_db.Flavors.OrderBy(flavor => flavor.Name));
       return View();
     }
 

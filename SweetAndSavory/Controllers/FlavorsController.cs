@@ -87,7 +87,7 @@ namespace SweetAndSavory.Controllers
 
     [HttpPost]
 
-    public ActionResult AddFlavor(Flavor flavor, int TreatId)
+    public ActionResult AddTreat(Flavor flavor, int TreatId)
     {
       if (TreatId != 0)
       {
@@ -96,6 +96,30 @@ namespace SweetAndSavory.Controllers
       }
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = flavor.FlavorId });
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      _db.Flavors.Remove(thisFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+
+    public ActionResult DeleteTreat(int joinId)
+    {
+      var joinEntry = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+      _db.FlavorTreat.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntry.FlavorId });
     }
   }
 }
