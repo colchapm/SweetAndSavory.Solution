@@ -52,5 +52,15 @@ namespace SweetAndSavory.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
+    public ActionResult Details(int id)
+    {
+      var thisFlavor = _db.Flavors
+      .Include(flavor => flavor.JoinEntities)
+      .ThenInclude(join => join.Treat)
+      .FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
+
   }
 }
