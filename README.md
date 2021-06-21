@@ -40,11 +40,11 @@ This is a C# MVC web application built with Identity to allow user authenticatio
 * _Still in the terminal, navigate to the desired subdirectory of the repository with the command `$ cd SweetAndSavory`_
 * _Retrieve and install packages listed in the .csproj files with the command `$ dotnet restore`_
 * _Create internal content for build with the command `$ dotnet build`_
-* _In Visual Studio Code, navigate to the `SweetAndSavory` directory and create an **appsettings.json** file and input the following script (**note the name of the database can be whatever you would like (e.g. pierre_sweetshop)**)_
+* _In Visual Studio Code, navigate to the `SweetAndSavory` directory and create an **appsettings.json** file and input the following script (**note the name of the database can be whatever you would like (e.g. collin_chapman_test)**)_
 ![Image of appsettings.json example](./SweetAndSavory/wwwroot/img/appsettings.json_test.png)
 * _If you do not have MySQL Workbench, it can be downloaded here: https://dev.mysql.com/downloads/file/?id=484391_
 * _Create Initial SQL migration with the following command `$ dotnet ef migrations add Initial`_
-* _Update the database in MySQL Workbench with the following command `$ dotnet ef database update` (**note this will title the database whatever you listed in your appsettings.json file (e.g. pierre_sweetshop_test)**) _
+* _Update the database in MySQL Workbench with the following command `$ dotnet ef database update` (**note this will title the database whatever you listed in your appsettings.json file (e.g. collin_chapman_test)**) _
 * _Back in the terminal, navigate to `$ cd SweetAndSavory` and run the application with the command `$ dotnet run`
 
 
